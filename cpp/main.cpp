@@ -7,7 +7,7 @@ using namespace std;
 string simpleHash(const string& input) {
     string hash = input;
     for (char& c : hash) {
-        c ^= 0xAA; // XOR with a simple key
+        c ^= 0xAA; 
     }
     return hash;
 }
@@ -19,7 +19,6 @@ void registerUser() {
     cout << "Enter password: ";
     cin >> password;
 
-    // Hash the password before storing
     string hashedPassword = simpleHash(password);
 
     ofstream file;
@@ -40,7 +39,6 @@ bool loginUser() {
     cout << "Enter password: ";
     cin >> password;
 
-    // Hash the password for comparison
     string hashedPassword = simpleHash(password);
 
     ifstream file("users.txt");
